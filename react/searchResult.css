@@ -245,3 +245,18 @@
 
 .notFound--layout {
 }
+
+.progressBar {
+  height: 3px;
+  width: 300px;
+  border-radius: 5px;
+  background-color: #e4e4e4;
+}
+
+.filler {
+  background: #4bd074;
+  min-width: 1px;
+  height: 7px;
+  border-radius: 3px;
+  transition: width 0.2s ease-in 0s;
+}
