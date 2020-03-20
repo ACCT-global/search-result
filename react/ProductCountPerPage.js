@@ -32,47 +32,40 @@ const ProductCountPerPage = () => {
     return null
   }
 
+  const showingProducts =
+    productsLoadedPercentage !== 100
+      ? {
+          showingProductsId: 'store/search-result.showing-products',
+          showingProductsCountId: 'store/search-result.showing-products-count',
+        }
+      : {
+          showingProductsId: 'store/search-result.showing-all-products',
+          showingProductsCountId:
+            'store/search-result.showing-all-products-count',
+        }
+
   return (
     <div
       className={`${handles.showingProductsContainer} flex flex-column justify-center items-center`}
     >
       <div className={`${handles.showingProducts} tc t-small pt3 c-muted-2`}>
-        {productsLoadedPercentage !== 100 ? (
-          <FormattedMessage
-            id="store/search-result.showing-products"
-            tagName="span"
-            values={{
-              value: (
-                <span className={`${handles.showingProductsCount} b`}>
-                  <FormattedMessage
-                    id="store/search-result.showing-products-count"
-                    values={{
-                      productsLoaded: products.length,
-                      total: recordsFiltered,
-                    }}
-                  />
-                </span>
-              ),
-            }}
-          />
-        ) : (
-          <FormattedMessage
-            id="store/search-result.showing-all-products"
-            tagName="span"
-            values={{
-              value: (
-                <span className={`${handles.showingAllProductsCount} b`}>
-                  <FormattedMessage
-                    id="store/search-result.showing-all-products-count"
-                    values={{
-                      total: recordsFiltered,
-                    }}
-                  />
-                </span>
-              ),
-            }}
-          />
-        )}
+        <FormattedMessage
+          id={showingProducts.showingProductsId}
+          tagName="span"
+          values={{
+            value: (
+              <span className={`${handles.showingProductsCount} b`}>
+                <FormattedMessage
+                  id={showingProducts.showingProductsCountId}
+                  values={{
+                    productsLoaded: products.length,
+                    total: recordsFiltered,
+                  }}
+                />
+              </span>
+            ),
+          }}
+        />
       </div>
       {productsLoadedPercentage && (
         <div
