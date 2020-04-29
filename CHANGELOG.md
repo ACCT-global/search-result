@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.56.2] - 2020-04-29
+### Added
+- new css handles: `filtersWrapper`
+
 ## [3.56.1] - 2020-04-24
 ### Fixed
 - Make query in component and done on SSR match.
