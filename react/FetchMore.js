@@ -41,7 +41,7 @@ const FetchMore = () => {
       <div
         className={classNames(
           styles['buttonShowMore--layout'],
-          'w-100 flex justify-center'
+          'w-100 flex justify-center justify-center'
         )}
       >
         <FetchMoreButton
